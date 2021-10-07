@@ -26,6 +26,10 @@ Poverty proxies used for targeting. Can have any column names.
 **characteristic1**...**characteristic20**: _object_ <br>
 Characteristics for fairness analysis. Must be of categorical type.
 
+```{warning}
+All proxy measures should go in the same direction! 
+```
+
 ```{note}
 Columns without a preceding asterisk '*' are optional
 ```

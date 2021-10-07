@@ -132,6 +132,11 @@
    Fairness Evaluations
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../quickstart/documentation_satellite.html">
+   Satellite
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -354,6 +359,10 @@ Weight for each survey observation (if sample weights are used)</p>
 Poverty proxies used for targeting. Can have any column names.</p>
 <p><strong>characteristic1</strong>…<strong>characteristic20</strong>: <em>object</em> <br>
 Characteristics for fairness analysis. Must be of categorical type.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>All proxy measures should go in the same direction!</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Columns without a preceding asterisk ‘*’ are optional</p>

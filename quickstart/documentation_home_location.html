@@ -133,6 +133,11 @@
    Fairness Evaluations
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="documentation_satellite.html">
+   Satellite
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -337,6 +342,10 @@ Warning: 10 antennas missing location
 </div>
 </div>
 <p>Try running the three different home location algorithms, specifying towers as the requested geographic level of aggregation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The three algorithms currently implemented are relatively simple; more sophisticate methods to infer users’ home locations do exist.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">home_locator</span><span class="o">.</span><span class="n">get_home_locations</span><span class="p">(</span><span class="n">algo</span><span class="o">=</span><span class="s1">&#39;count_transactions&#39;</span><span class="p">,</span> <span class="n">geo</span><span class="o">=</span><span class="s1">&#39;tower_id&#39;</span><span class="p">)</span>
@@ -452,7 +461,7 @@ Warning: 10 antennas missing location
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/documentation_home_location_9_0.png" src="../_images/documentation_home_location_9_0.png" />
+<img alt="../_images/documentation_home_location_10_0.png" src="../_images/documentation_home_location_10_0.png" />
 </div>
 </div>
 <p>Evaluate the accuracy of the home location inference using the ground truth data. Generate maps and a table of precision and recall for each tower.</p>
@@ -470,7 +479,7 @@ Observations with both: 1000 (1000 unique)
 Overall accuracy: 0.02
 </pre></div>
 </div>
-<img alt="../_images/documentation_home_location_11_1.png" src="../_images/documentation_home_location_11_1.png" />
+<img alt="../_images/documentation_home_location_12_1.png" src="../_images/documentation_home_location_12_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -552,7 +561,7 @@ Overall accuracy: 0.02
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/documentation_home_location_14_0.png" src="../_images/documentation_home_location_14_0.png" />
+<img alt="../_images/documentation_home_location_15_0.png" src="../_images/documentation_home_location_15_0.png" />
 </div>
 </div>
 </div>
