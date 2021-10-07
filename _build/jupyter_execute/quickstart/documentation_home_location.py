@@ -29,6 +29,10 @@ home_locator.ds.filter_dates('2020-01-05', '2020-02-01')
 
 # Try running the three different home location algorithms, specifying towers as the requested geographic level of aggregation.
 
+# ```{note}
+# The three algorithms currently implemented are relatively simple; more sophisticate methods to infer users' home locations do exist.
+# ```
+
 # In[5]:
 
 
