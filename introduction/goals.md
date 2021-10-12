@@ -1,6 +1,6 @@
 # Goals for cider
 
-Cider is a set of software tools for creating poverty predictions based on non-traditioinal data sources (such as call detail records and satellite imagery) and for evaluating the accuracy, fairness, representativity, and reliability of those predictions. Our goals for Cider are to enable:
+Cider is a set of software tools for creating poverty predictions based on non-traditional data sources (such as call detail records and satellite imagery) and for evaluating the accuracy, fairness, representativity, and reliability of those predictions. Our goals for Cider are to enable:
 
 - Public policy specialists and aid workers, working in conjunction with telecom operators, to remotely and rapidly estimate the poverty of individuals who opt in to services;
 

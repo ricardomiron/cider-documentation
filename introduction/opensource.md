@@ -8,9 +8,9 @@ For more information visit CIDER’s documentation below or [github repo](https:
 
 - **Encryption/Decryption upon consent:** We are adding functionality for personally identifying data to be encrypted prior to consent and only decrypted for analysis after a subscriber has consented. We are also building functionality for the encryption keys to be held by a third party for maximum security and auditing transparency. 
 
-- **Individual explanatinos of predictions:** We plan to implement model-agnostic prediction explanations for mobile phone-based poverty estimates with [LIME](https://www.kdd.org/kdd2016/papers/files/rfp0573-ribeiroA.pdf).
+- **Individual explanations of predictions:** We plan to implement model-agnostic prediction explanations for mobile phone-based poverty estimates with [LIME](https://www.kdd.org/kdd2016/papers/files/rfp0573-ribeiroA.pdf).
 
-## Ground rules for maintainers and contributers
+## Ground rules for maintainers and contributors
 
 ### Review committee
 
@@ -32,34 +32,15 @@ We will accept contributions to any of the modules in the code; we are particula
 
 You can expect a response to an issue or suggestion within three months. We spend about one hour per month on this project.
 
-## Methadology used to build this open-source guide
+## Methodology used to build this open-source guide
 
-To build this open source guide, we went through nine frameworks for similar open source guides:
-
-- [Apache Fineract: A Platform for Microfinance](https://github.com/apache/fineract/blob/develop/README.md)
-- [Bandicoot: An open-source python package to analyze mobile phone metadata](https://cpg.doc.ic.ac.uk/bandicoot/)
-- [CommCare by Dimagi](https://github.com/dimagi/commcare-hq/blob/master/README.md)
-- [Flowminder Flowkit](https://github.com/Flowminder/FlowKit)
-- [GSMA Innovative Data for Urban Planning](https://www.gsma.com/mobilefordevelopment/wp-content/uploads/2021/07/Innovative-Data-for-Urban-Planning-Opportunities-and-Challenges-Associated-with-Public-Private-Data-Partnerships-SPREADS.pdf)
+In the creation of this guide, we consulted with leading experts and reviewed 9 frameworks for open source guidelines:
+- [Flowminder Flowkit open source code](https://github.com/Flowminder/FlowKit)
+- [Thinking Machines Data Science Poverty Mapping open source code](https://github.com/thinkingmachines/ph-poverty-mapping)
+- [Apache Fineract: A Platform for Microfinance](https://github.com/apache/fineract/blob/develop/README.md) [[Link 2]](https://cwiki.apache.org/confluence/display/FINERACT/FAQ)
+- [GSMA Innovative Data for Urban Planning guidelines](https://www.gsma.com/mobilefordevelopment/wp-content/uploads/2021/07/Innovative-Data-for-Urban-Planning-Opportunities-and-Challenges-Associated-with-Public-Private-Data-Partnerships-SPREADS.pdf)
+- [CommCare: supports frontline workers in low-resource settings](https://github.com/dimagi/commcare-hq/blob/master/README.md) [[Link 2]](https://commcare-hq.readthedocs.io/)
+- [X-Road: exchange information securely over the Internet](https://github.com/nordic-institute/X-Road-development/blob/master/README.md)
+- [SORMAS: Surveillance, Outbreak Response Management and Analysis System](https://github.com/hzi-braunschweig) [[Link 2]](https://github.com/hzi-braunschweig/SORMAS-Project/blob/development/README.md)
 - [OCHA-Bucky: A COVID-19 model to inform humanitarian operations](https://ocha-bucky.readthedocs.io/en/latest/)
-- [SORMAS: Surveillance, Outbreak Response Management and Analysis System](https://github.com/hzi-braunschweig)
-- [Thinking Machines](https://github.com/thinkingmachines/ph-poverty-mapping)
-- [X-Road](https://github.com/nordic-institute/X-Road-development/blob/master/README.md)
-
-We also consulted with several open-source experts:
-
-- Stephanie Sy | Founder and CEO Thinking machines
-- Google.org 
-- Stefaan Verhulst | Co-Founder and Chief Research and Development Officer of The Governance Laboratory (GovLab) at New York University
-
-
-
-
-
-
-
-
-
-
-
-
+- [Bandicoot: An open-source python package to analyze mobile phone metadata](https://cpg.doc.ic.ac.uk/bandicoot/)
