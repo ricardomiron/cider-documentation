@@ -83,7 +83,54 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   cider: Open source software for poverty targeting with digital data
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Open Source Guide
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/goals.html">
+   Goals for cider
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/contexts.html">
+   Recommended contexts for cider
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/features.html">
+   Overview of features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/privacy.html">
+   Adherance to data privacy standards
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/trainingdata.html">
+   Recommendations: Training Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/verification.html">
+   Recommendations: Output verification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/research.html">
+   Research and resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/opensource.html">
+   Open source management
   </a>
  </li>
 </ul>
@@ -293,25 +340,32 @@
   <div class="section" id="poverty-outcome-generation-from-survey-data">
 <h1>Poverty Outcome Generation from Survey Data<a class="headerlink" href="#poverty-outcome-generation-from-survey-data" title="Permalink to this headline">¶</a></h1>
 <p>Set up the configuration file and load some survey data (see <a class="reference internal" href="../data_formats/survey_data.html"><span class="doc">standardized data formats</span></a>) for file schema).</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">yml</span>
-
-<span class="n">path</span><span class="p">:</span>
-    <span class="n">survey</span><span class="p">:</span> <span class="s1">&#39;/path/to/survey/data/directory&#39;</span>
-    <span class="n">outputs</span><span class="p">:</span> <span class="s1">&#39;/path/to/directory/to/save/outputs/&#39;</span>
-    <span class="n">file_names</span><span class="p">:</span>
-        <span class="n">survey</span><span class="p">:</span> <span class="s1">&#39;/survey_file_name.csv&#39;</span>
-    
-    <span class="n">col_types</span><span class="p">:</span>
-        <span class="n">survey</span><span class="p">:</span> 
-            <span class="n">continuous</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;con1&#39;</span><span class="p">,</span> <span class="s1">&#39;con2&#39;</span><span class="p">,</span> <span class="s1">&#39;con3&#39;</span><span class="p">]</span>
-            <span class="n">categorical</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;cat1&#39;</span><span class="p">,</span> <span class="s1">&#39;cat2&#39;</span><span class="p">,</span> <span class="s1">&#39;cat3&#39;</span><span class="p">]</span>
-            <span class="n">binary</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bin1&#39;</span><span class="p">,</span> <span class="s1">&#39;bin2&#39;</span><span class="p">,</span> <span class="s1">&#39;bin3&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">datastore</span> <span class="o">=</span> <span class="n">DataStore</span><span class="p">(</span><span class="s1">&#39;/path/to/config/file&#39;</span><span class="p">)</span>
+<span class="n">outcomes_generator</span> <span class="o">=</span> <span class="n">SurveyOutcomesGenerator</span><span class="p">(</span><span class="n">datastore</span><span class="o">=</span><span class="n">datastore</span><span class="p">,</span> <span class="n">clean_folders</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Calculate PCA asset index and proxy-means test (PMT). Only use binary and continuous columns in the asset index.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">asset_index</span> <span class="o">=</span> <span class="n">outcomes_generator</span><span class="o">.</span><span class="n">asset_index</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;con1&#39;</span><span class="p">,</span> <span class="s1">&#39;con2&#39;</span><span class="p">,</span> <span class="s1">&#39;bin1&#39;</span><span class="p">,</span> <span class="s1">&#39;bin2&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
 <p>Select five components to be used in the proxy-means test using forward selection of predictors with a linear regression. Calculate a proxy-means test with these components and obtain out-of-sample PMT predictions for the training survey.</p>
-<p>[OUT] r2 score: 0.56</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">selected_cols</span><span class="p">,</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">outcomes_generator</span>\
+                        <span class="o">.</span><span class="n">select_features</span><span class="p">(</span><span class="s1">&#39;consumption&#39;</span><span class="p">,</span>
+                                         <span class="p">[</span><span class="s1">&#39;con1&#39;</span><span class="p">,</span> <span class="s1">&#39;con2&#39;</span><span class="p">,</span> <span class="s1">&#39;cat1&#39;</span><span class="p">,</span> <span class="s1">&#39;cat2&#39;</span><span class="p">,</span> <span class="s1">&#39;bin1&#39;</span><span class="p">,</span> <span class="s1">&#39;bin2&#39;</span><span class="p">],</span> 
+                                         <span class="mi">5</span><span class="p">,</span> 
+                                         <span class="n">method</span><span class="o">=</span><span class="n">LinearRegession</span><span class="p">())</span>
+<span class="n">pmt</span> <span class="o">=</span> <span class="n">outcomes_generator</span><span class="o">.</span><span class="n">fit_pmt</span><span class="p">(</span><span class="s1">&#39;consumption&#39;</span><span class="p">,</span> 
+                                 <span class="n">selected_cols</span><span class="p">,</span> 
+                                 <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> 
+                                 <span class="n">winsorize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+                                 <span class="n">scale</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">[OUT]</span> <span class="pre">r2</span> <span class="pre">score:</span> <span class="pre">0.56</span></code></p>
 <p>Use the trained proxy-means test on another survey dataset.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">outcomes_generator</span><span class="o">.</span><span class="n">pretrained_pmt</span><span class="p">(</span><span class="s1">&#39;/path/to/other/data.csv&#39;</span><span class="p">,</span> <span class="n">selected_cols</span><span class="p">,</span> <span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
