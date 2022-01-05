@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Goals for cider &#8212; CIDER</title>
+    <title>cider &#8212; CIDER</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -87,13 +87,48 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Quickstart
+  Open Source Guide
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="goals.html">
+  <a class="reference internal" href="../introduction/goals.html">
    Goals for cider
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/contexts.html">
+   Recommended contexts for cider
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/features.html">
+   Overview of features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/privacy.html">
+   Adherance to data privacy standards
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/trainingdata.html">
+   Recommendations: Training Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/verification.html">
+   Recommendations: Output verification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/research.html">
+   Research and resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/opensource.html">
+   Open source management
   </a>
  </li>
 </ul>
@@ -211,6 +246,53 @@
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  API REFERENCE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/datastore.html">
+   Datastore API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/poverty_survey.html">
+   Survey API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/featurizer.html">
+   Featurizer API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/ml.html">
+   ML API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/home_location.html">
+   Home Location API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/targeting.html">
+   Targeting API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/fairness.html">
+   Fairness API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api/satellite.html">
+   Satellite API Reference
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -251,9 +333,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/introduction/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/_autosummary/cider.rst"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.rst</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -271,7 +353,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/emilylaiken/cider/issues/new?title=Issue%20on%20page%20%2Fintroduction/intro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/emilylaiken/cider/issues/new?title=Issue%20on%20page%20%2F_autosummary/cider.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -300,18 +382,9 @@
         
               <div>
                 
-  <div class="section" id="goals-for-cider">
-<h1>Goals for cider<a class="headerlink" href="#goals-for-cider" title="Permalink to this headline">¶</a></h1>
-<p>CIDER is a set of software tools for creating poverty predictions based on non-traditioinal data sources (such as call detail records and satellite imagery) and for evaluating the accuracy, fairness, representativity, and reliability of those predictions. Our goals for CIDER are to enable:</p>
-<ul class="simple">
-<li><p>Public policy specialists and aid workers, working in conjunction with telecom operators, to remotely and rapidly estimate the poverty of individuals who opt in to services;</p></li>
-<li><p>Aid workers and public policy specialists to quickly and more accurately create poverty indices;</p></li>
-<li><p>Policymakers to compare and evaluate targeting options when designing poverty alleviation programs, allowing them to choose the optimal option or combination of options;</p></li>
-<li><p>Public policy specialists to test for bias and representation in poverty predictions;
-Researchers and technical specialists to collaborate and add to the code and contribute new applications such as differential privacy on these applications.</p></li>
-</ul>
-<p><br><br>
-Download cider from <a class="reference external" href="https://github.com/emilylaiken/cider">github</a>.</p>
+  <div class="section" id="module-cider">
+<span id="cider"></span><h1>cider<a class="headerlink" href="#module-cider" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Modules</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -327,7 +400,7 @@ Download cider from <a class="reference external" href="https://github.com/emily
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./introduction"
+            path: "./_autosummary"
         },
         predefinedOutput: true
     }

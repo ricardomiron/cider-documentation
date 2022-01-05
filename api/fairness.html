@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Goals for cider &#8212; CIDER</title>
+    <title>Fairness API Reference &#8212; CIDER</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Recommended contexts for cider" href="contexts.html" />
-    <link rel="prev" title="Introduction" href="../intro.html" />
+    <link rel="next" title="Satellite API Reference" href="satellite.html" />
+    <link rel="prev" title="Targeting API Reference" href="targeting.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -92,44 +92,44 @@
   Open Source Guide
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/goals.html">
    Goals for cider
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="contexts.html">
+  <a class="reference internal" href="../introduction/contexts.html">
    Recommended contexts for cider
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="features.html">
+  <a class="reference internal" href="../introduction/features.html">
    Overview of features
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="privacy.html">
+  <a class="reference internal" href="../introduction/privacy.html">
    Adherance to data privacy standards
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="trainingdata.html">
+  <a class="reference internal" href="../introduction/trainingdata.html">
    Recommendations: Training Data
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="verification.html">
+  <a class="reference internal" href="../introduction/verification.html">
    Recommendations: Output verification
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="research.html">
+  <a class="reference internal" href="../introduction/research.html">
    Research and resources
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="opensource.html">
+  <a class="reference internal" href="../introduction/opensource.html">
    Open source management
   </a>
  </li>
@@ -253,44 +253,44 @@
   API REFERENCE
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../api/datastore.html">
+  <a class="reference internal" href="datastore.html">
    Datastore API Reference
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../api/poverty_survey.html">
+  <a class="reference internal" href="poverty_survey.html">
    Survey API Reference
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../api/featurizer.html">
+  <a class="reference internal" href="featurizer.html">
    Featurizer API Reference
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../api/ml.html">
+  <a class="reference internal" href="ml.html">
    ML API Reference
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../api/home_location.html">
+  <a class="reference internal" href="home_location.html">
    Home Location API Reference
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../api/targeting.html">
+  <a class="reference internal" href="targeting.html">
    Targeting API Reference
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../api/fairness.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Fairness API Reference
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../api/satellite.html">
+  <a class="reference internal" href="satellite.html">
    Satellite API Reference
   </a>
  </li>
@@ -335,9 +335,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/introduction/goals.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/api/fairness.rst"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.rst</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -355,7 +355,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/emilylaiken/cider/issues/new?title=Issue%20on%20page%20%2Fintroduction/goals.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/emilylaiken/cider/issues/new?title=Issue%20on%20page%20%2Fapi/fairness.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -384,16 +384,48 @@
         
               <div>
                 
-  <div class="section" id="goals-for-cider">
-<h1>Goals for cider<a class="headerlink" href="#goals-for-cider" title="Permalink to this headline">¶</a></h1>
-<p>Cider is a set of software tools for creating poverty predictions based on non-traditional data sources (such as call detail records and satellite imagery) and for evaluating the accuracy, fairness, representativity, and reliability of those predictions. Our goals for Cider are to enable:</p>
-<ul class="simple">
-<li><p>Public policy specialists and aid workers, working in conjunction with telecom operators, to remotely and rapidly estimate the poverty of individuals who opt in to services;</p></li>
-<li><p>Aid workers and public policy specialists to quickly and more accurately create poverty indices;</p></li>
-<li><p>Policymakers to compare and evaluate targeting options when designing poverty alleviation programs, allowing them to choose the optimal option or combination of options;</p></li>
-<li><p>Public policy specialists to test for bias and representation in poverty predictions;
-Researchers and technical specialists to collaborate and add to the code and contribute new applications such as differential privacy on these applications.</p></li>
-</ul>
+  <div class="section" id="fairness-api-reference">
+<h1>Fairness API Reference<a class="headerlink" href="#fairness-api-reference" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="cider.fairness.Fairness">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">Fairness</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datastore</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean_folders</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.fairness.Fairness" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="cider.fairness.Fairness.demographic_parity">
+<code class="sig-name descname"><span class="pre">demographic_parity</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">characteristic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.fairness.Fairness.demographic_parity" title="Permalink to this definition">¶</a></dt>
+<dd><p>var1 = groundtruth
+var2 = proxies. The thing that you’re evaluating the fairness of.
+characteristic = how the group is divided
+p = target the top p percent</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cider.fairness.Fairness.independence">
+<code class="sig-name descname"><span class="pre">independence</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">characteristic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.fairness.Fairness.independence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs the chi-squared independence test between the proxy variable and the sensitive characterisrtic</p>
+<p>var2 – the proxy variable
+characteristic – sensitive characteristic</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cider.fairness.Fairness.precision_per_group">
+<code class="sig-name descname"><span class="pre">precision_per_group</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">characteristic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.fairness.Fairness.precision_per_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>var1 = groundtruth
+var2 = proxies. The thing that you’re evaluating the fairness of.
+characteristic = how the group is divided
+p = target the top p percent</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cider.fairness.Fairness.recall_per_group">
+<code class="sig-name descname"><span class="pre">recall_per_group</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">characteristic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.fairness.Fairness.recall_per_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>var1 = groundtruth
+var2 = proxies. The thing that you’re evaluating the fairness of.
+characteristic = how the group is divided
+p = target the top p percent</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
     <script type="text/x-thebe-config">
@@ -409,7 +441,7 @@ Researchers and technical specialists to collaborate and add to the code and con
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./introduction"
+            path: "./api"
         },
         predefinedOutput: true
     }
@@ -426,19 +458,19 @@ Researchers and technical specialists to collaborate and add to the code and con
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../intro.html" title="previous page">
+        <a class="left-prev" href="targeting.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Introduction</p>
+                <p class="prevnext-title">Targeting API Reference</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="contexts.html" title="next page">
+        <a class="right-next" href="satellite.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Recommended contexts for cider</p>
+                <p class="prevnext-title">Satellite API Reference</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
