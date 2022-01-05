@@ -38,4 +38,13 @@ parts:
     - file: data_formats/home_locations
     - file: data_formats/survey_data
     - file: data_formats/targeting_data
-
+  - caption: API REFERENCE
+    chapters:
+      - file: api/datastore
+      - file: api/poverty_survey
+      - file: api/featurizer
+      - file: api/ml
+      - file: api/home_location
+      - file: api/targeting
+      - file: api/fairness
+      - file: api/satellite

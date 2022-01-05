@@ -1,9 +1,16 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[7]:
+
+
+import sys
+sys.path.insert(0, '../../cider/cider')
+
+
 # # Featurizer
 
-# In[1]:
+# In[8]:
 
 
 from datastore import DataStore
@@ -12,10 +19,10 @@ from featurizer import Featurizer
 
 # Load some mobile phone metadata. See {doc}`standardized data formats <../data_formats/cdr>` for file schemas. 
 
-# In[3]:
+# In[11]:
 
 
-datastore = DataStore(cfg_dir='./configs/config.yml')
+datastore = DataStore(cfg_dir='../../cider/configs/config.yml')
 featurizer = Featurizer(datastore=datastore, clean_folders=True)
 
 
@@ -57,7 +64,7 @@ featurizer.diagnostic_plots()
 
 # Featurize the data
 
-# In[ ]:
+# In[12]:
 
 
 featurizer.cdr_features()

@@ -30,3 +30,13 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+# Sphinx extensions
+sphinx:
+  extra_extensions:
+  - 'sphinx.ext.autodoc'
+  - 'sphinx.ext.napoleon'
+  config:
+    add_module_names: False
+    autodoc_typehints: "description"
+#   - 'sphinx.ext.viewcode'
