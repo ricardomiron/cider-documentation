@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Satellite API Reference &#8212; CIDER</title>
+    <title>Satellite API Reference</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -70,8 +70,8 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+      <img src="../_static/logo.png" class="logo" alt="logo">
       
-      <h1 class="site-logo" id="site-title">CIDER</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -95,11 +95,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction/goals.html">
    Goals for cider
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/contexts.html">
-   Recommended contexts for cider
   </a>
  </li>
  <li class="toctree-l1">
@@ -350,11 +345,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/emilylaiken/cider"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/Global-Policy-Lab/cider"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/emilylaiken/cider/issues/new?title=Issue%20on%20page%20%2Fapi/satellite.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/Global-Policy-Lab/cider/issues/new?title=Issue%20on%20page%20%2Fapi/satellite.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -385,30 +380,6 @@
                 
   <div class="section" id="satellite-api-reference">
 <h1>Satellite API Reference<a class="headerlink" href="#satellite-api-reference" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
-<dt id="cider.satellite.Satellite">
-<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">Satellite</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datastore</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataframes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean_folders</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.satellite.Satellite" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="py method">
-<dt id="cider.satellite.Satellite.aggregate_scores">
-<code class="sig-name descname"><span class="pre">aggregate_scores</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rwi'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.satellite.Satellite.aggregate_scores" title="Permalink to this definition">¶</a></dt>
-<dd><p>Aggregates wealth index contained in a raster dataset, like the Relative Wealth Index, to a certain geographic
-level, taking into account population density levels.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>geo</strong> (<em>str</em>) – Geographic level of aggregation: the corresponding antennas or admin boundaries shapefiles have to have
-been loaded.</p></li>
-<li><p><strong>dataset</strong> (<em>str</em>) – Which wealth/income map to use - only ‘rwi’ for now.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 
     <script type="text/x-thebe-config">
@@ -458,7 +429,7 @@ been loaded.</p></li>
     <div class="container">
       <p>
         
-          By X<br/>
+          By UC Berkeley Global Policy Lab<br/>
         
             &copy; Copyright 2021.<br/>
       </p>

@@ -34,7 +34,7 @@ You can expect a response to an issue or suggestion within three months. We spen
 
 ## Methodology used to build this open-source guide
 
-In the creation of this guide, we consulted with leading experts and reviewed 9 frameworks for open source guidelines:
+We modeled this guide on nine related open source guides: 
 - [Flowminder Flowkit open source code](https://github.com/Flowminder/FlowKit)
 - [Thinking Machines Data Science Poverty Mapping open source code](https://github.com/thinkingmachines/ph-poverty-mapping)
 - [Apache Fineract: A Platform for Microfinance](https://github.com/apache/fineract/blob/develop/README.md) [[Link 2]](https://cwiki.apache.org/confluence/display/FINERACT/FAQ)

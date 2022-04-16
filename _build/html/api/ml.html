@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ML API Reference &#8212; CIDER</title>
+    <title>ML API Reference</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -71,8 +71,8 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+      <img src="../_static/logo.png" class="logo" alt="logo">
       
-      <h1 class="site-logo" id="site-title">CIDER</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -96,11 +96,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction/goals.html">
    Goals for cider
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/contexts.html">
-   Recommended contexts for cider
   </a>
  </li>
  <li class="toctree-l1">
@@ -351,11 +346,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/emilylaiken/cider"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/Global-Policy-Lab/cider"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/emilylaiken/cider/issues/new?title=Issue%20on%20page%20%2Fapi/ml.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/Global-Policy-Lab/cider/issues/new?title=Issue%20on%20page%20%2Fapi/ml.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -386,172 +381,6 @@
                 
   <div class="section" id="ml-api-reference">
 <h1>ML API Reference<a class="headerlink" href="#ml-api-reference" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
-<dt id="cider.ml.Learner">
-<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">Learner</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datastore</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean_folders</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kfold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.ml.Learner" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="py method">
-<dt id="cider.ml.Learner.automl">
-<code class="sig-name descname"><span class="pre">automl</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.ml.Learner.automl" title="Permalink to this definition">¶</a></dt>
-<dd><p>Trains ML models using AutoML - the libraries’ parameters are specified in the config file. All models,
-including the ensembles, are saved to disk.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>model_name</strong> (<em>str</em>) – The name of the AutoML library to use - currently it only supports ‘autogluon’ (AutoGluon).</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cider.ml.Learner.feature_importances">
-<code class="sig-name descname"><span class="pre">feature_importances</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'tuned'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.ml.Learner.feature_importances" title="Permalink to this definition">¶</a></dt>
-<dd><p>Computes the relative of features for a trained model.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>model_name</strong> (<em>str</em>) – The name of the model.</p></li>
-<li><p><strong>kind</strong> (<em>str</em>) – The type of model, i.e. untuned, tuned, or automl.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>pandas.core.frame.DataFrame</p>
-</dd>
-</dl>
-<p>Returns: The pandas df with all features and their importance.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cider.ml.Learner.feature_importances_plot">
-<code class="sig-name descname"><span class="pre">feature_importances_plot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'tuned'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.ml.Learner.feature_importances_plot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Produces horizontal bar plots of already calculated feature importances.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>model_name</strong> (<em>str</em>) – The name of the model.</p></li>
-<li><p><strong>kind</strong> (<em>str</em>) – The type of model, i.e. untuned, tuned, or automl.</p></li>
-<li><p><strong>n_features</strong> (<em>int</em>) – The number of top features to use in the plot.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cider.ml.Learner.oos_predictions">
-<code class="sig-name descname"><span class="pre">oos_predictions</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'tuned'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.ml.Learner.oos_predictions" title="Permalink to this definition">¶</a></dt>
-<dd><p>Computes out-of-sample predictions for all training + test samples.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>model_name</strong> (<em>str</em>) – The name of the model.</p></li>
-<li><p><strong>kind</strong> (<em>str</em>) – The type of model, i.e. untuned, tuned, or automl.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>pandas.core.frame.DataFrame</p>
-</dd>
-</dl>
-<p>Returns: The pandas df with true and predicted values for all training + test samples.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cider.ml.Learner.population_predictions">
-<code class="sig-name descname"><span class="pre">population_predictions</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'tuned'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_chunks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.ml.Learner.population_predictions" title="Permalink to this definition">¶</a></dt>
-<dd><p>Computes predictions for all population samples, i.e. those samples that do not have ground-truth data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>model_name</strong> (<em>str</em>) – The name of the model.</p></li>
-<li><p><strong>kind</strong> (<em>str</em>) – The type of model, i.e. untuned, tuned, or automl.</p></li>
-<li><p><strong>n_chunks</strong> (<em>int</em>) – The number of chunks to divide the full population dataset in.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>pandas.core.frame.DataFrame</p>
-</dd>
-</dl>
-<p>Returns: The pandas df with predicted values.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cider.ml.Learner.scatter_plot">
-<code class="sig-name descname"><span class="pre">scatter_plot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'tuned'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.ml.Learner.scatter_plot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Charts the out-of-sample predictions and the true values as a scatter plot, computes the correlation coefficient
-between the two series, and superimposed the fitted LOESS curve.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>model_name</strong> (<em>str</em>) – The name of the model.</p></li>
-<li><p><strong>kind</strong> (<em>str</em>) – The type of model, i.e. untuned, tuned, or automl.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cider.ml.Learner.targeting_table">
-<code class="sig-name descname"><span class="pre">targeting_table</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'tuned'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.ml.Learner.targeting_table" title="Permalink to this definition">¶</a></dt>
-<dd><p>Computes classification metrics using OOS predictions and when targeting 10 different subsets of the population,
-the bottom p percentile where p = [0, 10, …, 90].</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>model_name</strong> (<em>str</em>) – The name of the model.</p></li>
-<li><p><strong>kind</strong> (<em>str</em>) – The type of model, i.e. untuned, tuned, or automl.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>pandas.core.frame.DataFrame</p>
-</dd>
-</dl>
-<p>Returns: The pandas df with correlation, accuracy, precision, recall, AUC, when targeting the bottom p
-percentile of the population, where p = [0, 10, …, 90].</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cider.ml.Learner.tuned_model">
-<code class="sig-name descname"><span class="pre">tuned_model</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.ml.Learner.tuned_model" title="Permalink to this definition">¶</a></dt>
-<dd><p>Trains the ML model specified by ‘model_name’ and returns the R2 and the RMSE it obtained on the train and test
-sets by all models. During training, it will try the grid of hyper-parameters specified in the config file for
-the corresponding model. It also saves the trained models and computes its their feature importance.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>model_name</strong> (<em>str</em>) – The name of the model to use - one of [‘linear’, ‘lasso’, ‘ridge’, ‘randomforest’,</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>Dict[str, str]</p>
-</dd>
-</dl>
-<p>‘gradientboosting’]</p>
-<p>Returns: A dict of R2 and RMSE scores obtained on training and test sets by the best model.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cider.ml.Learner.untuned_model">
-<code class="sig-name descname"><span class="pre">untuned_model</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.ml.Learner.untuned_model" title="Permalink to this definition">¶</a></dt>
-<dd><p>Trains the ML model specified by ‘model_name’ and returns the R2 and the RMSE it obtained on the train and test
-sets. It also saves the trained model and computes its feature importance.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>model_name</strong> (<em>str</em>) – The name of the model to use - one of [‘linear’, ‘lasso’, ‘ridge’, ‘randomforest’,</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>Dict[str, str]</p>
-</dd>
-</dl>
-<p>‘gradientboosting’]</p>
-<p>Returns: A dict of R2 and RMSE scores obtained on training and test sets.</p>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 
     <script type="text/x-thebe-config">
@@ -610,7 +439,7 @@ sets. It also saves the trained model and computes its feature importance.</p>
     <div class="container">
       <p>
         
-          By X<br/>
+          By UC Berkeley Global Policy Lab<br/>
         
             &copy; Copyright 2021.<br/>
       </p>

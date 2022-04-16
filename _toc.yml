@@ -7,7 +7,6 @@ parts:
   - caption: Open Source Guide
     chapters:
     - file: introduction/goals.md
-    - file: introduction/contexts.md
     - file: introduction/features.md
     - file: introduction/privacy.md
     - file: introduction/trainingdata.md
