@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Location API Reference &#8212; CIDER</title>
+    <title>Home Location API Reference</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -28,6 +28,19 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/5.13.0/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -40,6 +53,21 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/jquery-3.5.1.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/copybutton_funcs.js"></script>
+    <script src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/underscore-1.12.0.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -71,8 +99,8 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+      <img src="../_static/logo.png" class="logo" alt="logo">
       
-      <h1 class="site-logo" id="site-title">CIDER</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -96,11 +124,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction/goals.html">
    Goals for cider
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/contexts.html">
-   Recommended contexts for cider
   </a>
  </li>
  <li class="toctree-l1">
@@ -351,11 +374,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/emilylaiken/cider"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/Global-Policy-Lab/cider"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/emilylaiken/cider/issues/new?title=Issue%20on%20page%20%2Fapi/home_location.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/Global-Policy-Lab/cider/issues/new?title=Issue%20on%20page%20%2Fapi/home_location.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -386,86 +409,6 @@
                 
   <div class="section" id="home-location-api-reference">
 <h1>Home Location API Reference<a class="headerlink" href="#home-location-api-reference" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
-<dt id="cider.home_location.HomeLocator">
-<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">HomeLocator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datastore</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataframes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean_folders</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.home_location.HomeLocator" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="py method">
-<dt id="cider.home_location.HomeLocator.accuracy">
-<code class="sig-name descname"><span class="pre">accuracy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'count_transactions'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.home_location.HomeLocator.accuracy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use ground truth data on users’ homes to compute accuracy metrics for the inferred home locations</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>geo</strong> (<em>str</em>) – compute accuracy metrics at geographic level specified by argument ‘geo’</p></li>
-<li><p><strong>algo</strong> (<em>str</em>) – use home locations inferred using algo</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>pandas.core.frame.DataFrame</p>
-</dd>
-</dl>
-<p>Returns: accuracy table (accuracy, precision, recall) as pandas df</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cider.home_location.HomeLocator.get_home_locations">
-<code class="sig-name descname"><span class="pre">get_home_locations</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'count_transactions'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.home_location.HomeLocator.get_home_locations" title="Permalink to this definition">¶</a></dt>
-<dd><p>Infer home locations of users based on their CDR transactions</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>geo</strong> (<em>str</em>) – geographic level at which to compute home locations; must be antenna_id, tower_id (if available), or
-one of the levels provided by the loaded shapefiles</p></li>
-<li><p><strong>algo</strong> (<em>str</em>) – algorithm to use, to be chosen from [‘count_transactions’, ‘count_days’, count_modal_days]</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>pandas.core.frame.DataFrame</p>
-</dd>
-</dl>
-<p>Returns: pandas df with inferred home location for each user</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cider.home_location.HomeLocator.map">
-<code class="sig-name descname"><span class="pre">map</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'count_transactions'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'population'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">voronoi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.home_location.HomeLocator.map" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot distribution of homes, accuracy of home locations, or average poverty score (predicted using the ML model
-or otherwise) on a map</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>geo</strong> (<em>str</em>) – plot at geographic level specified by argument ‘geo’</p></li>
-<li><p><strong>algo</strong> (<em>str</em>) – algorithm responsible for the home inference</p></li>
-<li><p><strong>kind</strong> (<em>str</em>) – indicator to plot - [‘precision’, ‘recall’, ‘poverty’]</p></li>
-<li><p><strong>voronoi</strong> (<em>bool</em>) – whether to use voronoi tessellation when plotting at the antenna/tower level</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cider.home_location.HomeLocator.pop_comparison">
-<code class="sig-name descname"><span class="pre">pop_comparison</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'count_transactions'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.home_location.HomeLocator.pop_comparison" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use a population density raster - e.g. FB D4G’s high resolution density maps - to compare the distribution of
-inferred home locations to the population</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>geo</strong> (<em>str</em>) – compare pop distribution at geographic level specified by argument ‘geo’</p></li>
-<li><p><strong>algo</strong> (<em>str</em>) – algorithm responsible for the home inference</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 
     <script type="text/x-thebe-config">
@@ -524,7 +467,7 @@ inferred home locations to the population</p>
     <div class="container">
       <p>
         
-          By X<br/>
+          By UC Berkeley Global Policy Lab<br/>
         
             &copy; Copyright 2021.<br/>
       </p>

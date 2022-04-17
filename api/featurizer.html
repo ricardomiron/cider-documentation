@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Featurizer API Reference &#8212; CIDER</title>
+    <title>Featurizer API Reference</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -28,6 +28,19 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/5.13.0/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -40,6 +53,21 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/jquery-3.5.1.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/copybutton_funcs.js"></script>
+    <script src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/underscore-1.12.0.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -71,8 +99,8 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+      <img src="../_static/logo.png" class="logo" alt="logo">
       
-      <h1 class="site-logo" id="site-title">CIDER</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -96,11 +124,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction/goals.html">
    Goals for cider
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/contexts.html">
-   Recommended contexts for cider
   </a>
  </li>
  <li class="toctree-l1">
@@ -351,11 +374,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/emilylaiken/cider"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/Global-Policy-Lab/cider"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/emilylaiken/cider/issues/new?title=Issue%20on%20page%20%2Fapi/featurizer.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/Global-Policy-Lab/cider/issues/new?title=Issue%20on%20page%20%2Fapi/featurizer.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -386,107 +409,6 @@
                 
   <div class="section" id="featurizer-api-reference">
 <h1>Featurizer API Reference<a class="headerlink" href="#featurizer-api-reference" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
-<dt id="cider.featurizer.Featurizer">
-<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">Featurizer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datastore</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataframes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean_folders</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.featurizer.Featurizer" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="py method">
-<dt id="cider.featurizer.Featurizer.all_features">
-<code class="sig-name descname"><span class="pre">all_features</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read_from_disk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.featurizer.Featurizer.all_features" title="Permalink to this definition">¶</a></dt>
-<dd><p>Join all feature datasets together, save to disk, and assign to attribute</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>read_from_disk</strong> (<em>bool</em>) – whether to load features from disk</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cider.featurizer.Featurizer.cdr_features">
-<code class="sig-name descname"><span class="pre">cdr_features</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bc_chunksize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bc_processes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">55</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.featurizer.Featurizer.cdr_features" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute CDR features using bandicoot library and save to disk</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>bc_chunksize</strong> (<em>int</em>) – number of users per chunk</p></li>
-<li><p><strong>bc_processes</strong> (<em>int</em>) – number of processes to run in parallel</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cider.featurizer.Featurizer.cdr_features_spark">
-<code class="sig-name descname"><span class="pre">cdr_features_spark</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cider.featurizer.Featurizer.cdr_features_spark" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute CDR features using spark and save to disk</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cider.featurizer.Featurizer.diagnostic_plots">
-<code class="sig-name descname"><span class="pre">diagnostic_plots</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.featurizer.Featurizer.diagnostic_plots" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute time series of transactions, save to disk, and plot if requested</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>plot</strong> (<em>bool</em>) – whether to plot graphs</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cider.featurizer.Featurizer.diagnostic_statistics">
-<code class="sig-name descname"><span class="pre">diagnostic_statistics</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">write</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.featurizer.Featurizer.diagnostic_statistics" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute summary statistics of datasets</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>write</strong> (<em>bool</em>) – whether to write json to disk</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>Dict[str, Dict[str, int]]</p>
-</dd>
-</dl>
-<p>Returns: dict of dicts containing summary stats - {‘CDR’: {‘Transactions’: 2.3, …}, …}</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cider.featurizer.Featurizer.feature_plots">
-<code class="sig-name descname"><span class="pre">feature_plots</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">read_from_disk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.featurizer.Featurizer.feature_plots" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot the distribution of a select number of features</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>read_from_disk</strong> (<em>bool</em>) – whether to load features from disk</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cider.featurizer.Featurizer.load_features">
-<code class="sig-name descname"><span class="pre">load_features</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cider.featurizer.Featurizer.load_features" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load features from disk if already computed</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 
     <script type="text/x-thebe-config">
@@ -545,7 +467,7 @@
     <div class="container">
       <p>
         
-          By X<br/>
+          By UC Berkeley Global Policy Lab<br/>
         
             &copy; Copyright 2021.<br/>
       </p>
