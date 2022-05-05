@@ -407,6 +407,46 @@
                 
   <div class="section" id="fairness-api-reference">
 <h1>Fairness API Reference<a class="headerlink" href="#fairness-api-reference" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="cider.fairness.Fairness">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">Fairness</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datastore</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean_folders</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.fairness.Fairness" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="cider.fairness.Fairness.demographic_parity">
+<code class="sig-name descname"><span class="pre">demographic_parity</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">characteristic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.fairness.Fairness.demographic_parity" title="Permalink to this definition">¶</a></dt>
+<dd><p>var1 = groundtruth
+var2 = proxies. The thing that you’re evaluating the fairness of.
+characteristic = how the group is divided
+p = target the top p percent</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cider.fairness.Fairness.independence">
+<code class="sig-name descname"><span class="pre">independence</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">characteristic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.fairness.Fairness.independence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs the chi-squared independence test between the proxy variable and the sensitive characterisrtic</p>
+<p>var2 – the proxy variable
+characteristic – sensitive characteristic</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cider.fairness.Fairness.precision_per_group">
+<code class="sig-name descname"><span class="pre">precision_per_group</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">characteristic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.fairness.Fairness.precision_per_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>var1 = groundtruth
+var2 = proxies. The thing that you’re evaluating the fairness of.
+characteristic = how the group is divided
+p = target the top p percent</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cider.fairness.Fairness.recall_per_group">
+<code class="sig-name descname"><span class="pre">recall_per_group</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">characteristic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.fairness.Fairness.recall_per_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>var1 = groundtruth
+var2 = proxies. The thing that you’re evaluating the fairness of.
+characteristic = how the group is divided
+p = target the top p percent</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
     <script type="text/x-thebe-config">

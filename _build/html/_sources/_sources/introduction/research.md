@@ -4,7 +4,7 @@
 
 Cider was developed from a line of research on estimating poverty from machine learning and mobile phone data that dates back to 2015. The following papers provide context on this research and discussions of the accuracy, fairness, and practicality of phone-based targeting in several contexts. 
 
-- [Aiken, E. et al. (2021). Machine learning and mobile phone data can improve the targeting of humanitarian assistance. *NBER working paper 29070*.](https://www.nber.org/papers/w29070)
+- [Aiken, E. et al. (2021). Machine learning and mobile phone data can improve the targeting of humanitarian assistance. *Nature* 603 pages 864-870.](https://www.nature.com/articles/s41586-022-04484-9)
 
 - [Aiken, E. et al. (2020). Targeting development aid with machine learning and mobile phone data: Evidence from an anti-poverty intervention in Afghanistan. *ACM SIGCAS Conference on Computing and Sustainable Societies*.](https://dl.acm.org/doi/10.1145/3378393.3402274)
 

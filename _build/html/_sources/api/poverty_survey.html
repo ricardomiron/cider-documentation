@@ -407,6 +407,107 @@
                 
   <div class="section" id="survey-api-reference">
 <h1>Survey API Reference<a class="headerlink" href="#survey-api-reference" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="cider.survey.SurveyOutcomeGenerator">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">SurveyOutcomeGenerator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datastore</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean_folders</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.survey.SurveyOutcomeGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="cider.survey.SurveyOutcomeGenerator.asset_index">
+<code class="sig-name descname"><span class="pre">asset_index</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.survey.SurveyOutcomeGenerator.asset_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Derives an asset index - first component of (weighted) PCA - from specified set of columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cols</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Columns (i.e. survey questions) to use to derive the index.</p></li>
+<li><p><strong>use_weights</strong> (<em>bool</em>) – If true, uses a weighted PCA.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>pandas.core.frame.DataFrame</p>
+</dd>
+</dl>
+<p>Returns: Pandas df containing asset index of surveyed users.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cider.survey.SurveyOutcomeGenerator.fit_pmt">
+<code class="sig-name descname"><span class="pre">fit_pmt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outcome</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kfold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">winsorize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.survey.SurveyOutcomeGenerator.fit_pmt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trains a model to predict an outcome variable using a set of survey questions - this will be the PMT.
+Also provides metrics on modelling performance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>outcome</strong> (<em>str</em>) – Target variable.</p></li>
+<li><p><strong>cols</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Independent variables.</p></li>
+<li><p><strong>model_name</strong> (<em>str</em>) – ML model to use - can be one of [‘linear’, ‘lasso’, ‘ridge’, ‘randomforest’, ‘gradientboosting’]</p></li>
+<li><p><strong>kfold</strong> (<em>int</em>) – Number of cross-validation folds to use.</p></li>
+<li><p><strong>use_weights</strong> (<em>bool</em>) – If true, uses survey weights.</p></li>
+<li><p><strong>log_transform</strong> (<em>bool</em>) – If true, log transforms outcome variable.</p></li>
+<li><p><strong>scale</strong> (<em>bool</em>) – If true, standard scales inputs.</p></li>
+<li><p><strong>winsorize</strong> (<em>bool</em>) – If ture, winsorizes (.005, .995) inputs.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>pandas.core.frame.DataFrame</p>
+</dd>
+</dl>
+<p>Returns: Pandas df of outcome variable, in-sample predictions, and out-of-sample predictions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cider.survey.SurveyOutcomeGenerator.pretrained_pmt">
+<code class="sig-name descname"><span class="pre">pretrained_pmt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other_data_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'other_data'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.survey.SurveyOutcomeGenerator.pretrained_pmt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use a pre-trained PMT model to predict the outcome variable in another dataset - check that the latter has the
+same columns and data types of the original survey that was used to train the PMT</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other_data_in</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>pandas.core.frame.DataFrame</em><em>]</em>) – new dataset to get predictions for, either as path or as pandas df</p></li>
+<li><p><strong>cols</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – input columns</p></li>
+<li><p><strong>model_name</strong> (<em>str</em>) – PMT model to use</p></li>
+<li><p><strong>dataset_name</strong> (<em>str</em>) – name of new dataset</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>pandas.core.frame.DataFrame</p>
+</dd>
+</dl>
+<p>Returns: pandas df of user id and predicted outcome variable</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cider.survey.SurveyOutcomeGenerator.select_features">
+<code class="sig-name descname"><span class="pre">select_features</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outcome</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'correlation'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kfold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cider.survey.SurveyOutcomeGenerator.select_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects the top-N features that are most useful to predict the outcome variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>outcome</strong> (<em>str</em>) – Target variable.</p></li>
+<li><p><strong>cols</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Independent variables.</p></li>
+<li><p><strong>n_features</strong> (<em>int</em>) – Number of features to select.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – <p>Method to use to select the top-N features - it can be:
+‘correlation’: return top N features most correlated with the outcome
+‘lasso’: use LASSO regressions for a grid of penalties to select features, use the one which has the</p>
+<blockquote>
+<div><p>closest to n_features features</p>
+</div></blockquote>
+<p>OTHER STRING: forward selection with a machine learning model</p>
+</p></li>
+<li><p><strong>model_name</strong> (<em>str</em>) – Name to use when saving outputs.</p></li>
+<li><p><strong>kfold</strong> (<em>int</em>) – Number of cross-validation folds to use.</p></li>
+<li><p><strong>use_weights</strong> (<em>bool</em>) – If true, uses survey weights.</p></li>
+<li><p><strong>log_transform</strong> (<em>bool</em>) – If true, log transforms outcome variable.</p></li>
+<li><p><strong>plot</strong> (<em>bool</em>) – If true, plots performance metrics.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Tuple[List[str], pandas.core.frame.DataFrame]</p>
+</dd>
+</dl>
+<p>Returns: Top-N features selected, pandas df of scores.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
     <script type="text/x-thebe-config">
