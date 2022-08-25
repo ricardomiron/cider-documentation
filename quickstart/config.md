@@ -16,30 +16,36 @@ spark:
   loglevel: "ERROR"
 ```
 
-Then we set the paths to the folders that store our files, and also specify the file names:
+Next we specify folder and file locations. File paths are given relative to a "parent" directory: Either the `input_data` \
+directory or the `working` directory (they should not have leading slashes). The locations of the parent directories must \
+be specified with absolute paths (with leading slashes). Files \
+under the `input_data` directory will not be modified; the `working` directory is used for program outputs, which may or may \
+not act as inputs for later steps. For example, the featurizer writes features to the `working` directory, and then the ml module \
+reads features back in from that directory. At present, file names/sub-paths written programmatically under the `working` directory \
+are hard-coded and can't be specified in config.
 
 ```
 path:
-  data: "/Users/example/Documents/GD/cider/synthetic_data/"
-  features: '/Users/example/Documents/GD/cider/outputs/featurizer/datasets/features.csv'
-  file_names:
-    antennas: 'antennas.csv'
-    cdr: 'cdr.csv'
-    home_ground_truth: 'home_locations.csv'
-    labels: 'labels.csv'
-    mobiledata: 'mobiledata.csv'
-    mobilemoney: 'mobilemoney.csv'
-    population: 'population_tgo_2019-07-01.tif'
-    poverty_scores: null
-    recharges: 'recharges.csv'
-    rwi: '/TGO_relative_wealth_index.csv'
-    shapefiles:
-      regions: 'regions.geojson'
-      cantons: 'cantons.geojson'
-      prefectures: 'prefectures.geojson'
-    user_consent: null
-  outputs: "/Users/example/Documents/GD/cider/outputs/"  // output folder
-  wd: "/Users/example/Documents/GD/cider/"  // working directory
+  input_data: 
+    directory_path: "/Users/example/Documents/GD/cider/synthetic_data/"
+    file_paths:
+      antennas: "antennas.csv"
+      cdr: "cdr.csv"
+      home_ground_truth: "home_locations.csv"
+      labels: "labels.csv"
+      mobiledata: "mobiledata.csv"
+      mobilemoney: "mobilemoney.csv"
+      population: "population_tgo_2019-07-01.tif"
+      poverty_scores: null
+      recharges: "recharges.csv"
+      rwi: "TGO_relative_wealth_index.csv"
+      shapefiles:
+        regions: "regions.geojson"
+        cantons: "cantons.geojson"
+        prefectures: "prefectures.geojson"
+      user_consent: null
+  working: 
+    directory_path: "/Users/example/Documents/GD/cider/working_directory/"
 ```
 
 The featurizer module expects certain column and column names, and we can define them in the following section of the 
@@ -79,7 +85,7 @@ col_names:
     sender_balance_after: "sender_balance_after"
     recipient_balance_before: "recipient_balance_before"
     recipient_balance_after: "recipient_balance_after"
-  geo: 'tower_id'
+  geo: "tower_id"
 ```
 
 We also have to set a few parameters that will affect the behaviour of some modules:
@@ -99,42 +105,42 @@ params:
       memory_limit: 3072
     autogluon:
       time_limit: 3600
-      eval_metric: 'r2'
-      label: 'label'
-      sample_weight: 'weight'
+      eval_metric: "r2"
+      label: "label"
+      sample_weight: "weight"
   opt_in_default: false // if true opt-in is set as default, i.e. all users give their consent unless they opt-out
 ```
 
-Finally, we can set the hyper-parameters that will be tested during a grid-search performed by the ML module"
+Finally, we can set the hyper-parameters that will be tested during a grid-search performed by the ML module:
 
 ```
 hyperparams:
-  'linear':
-    'dropmissing__threshold': [0.9, 1]
-    'droplowvariance__threshold': [ 0, 0.01 ]
-    'winsorizer__limits': [!!python/tuple [0., 1.], !!python/tuple [0.005, .995]]
-  'lasso':
-    'dropmissing__threshold': [ 0.9, 1 ]
-    'droplowvariance__threshold': [ 0, 0.01 ]
-    'winsorizer__limits': [!!python/tuple [0., 1.], !!python/tuple [0.005, .995]]
-    'model__alpha': [ .001, .01, .05, .03, .1 ]
-  'ridge':
-    'dropmissing__threshold': [ 0.9, 1 ]
-    'droplowvariance__threshold': [ 0, 0.01 ]
-    'winsorizer__limits': [!!python/tuple [0., 1.], !!python/tuple [0.005, .995]]
-    'model__alpha': [ .001, .01, .05, .03, .1 ]
-  'randomforest':
-    'dropmissing__threshold': [ 0.9, 1 ]
-    'droplowvariance__threshold': [ 0, 0.01 ]
-    'winsorizer__limits': [!!python/tuple [0., 1.], !!python/tuple [0.005, .995]]
-    'model__max_depth': [ 2, 4, 6, 8, 10 ]
-    'model__n_estimators': [ 50, 100, 200 ]
-  'gradientboosting':
-    'dropmissing__threshold': [ 0.99 ]
-    'droplowvariance__threshold': [ 0.01 ]
-    'winsorizer__limits': [!!python/tuple [0., 1.], !!python/tuple [0.005, .995]]
-    'model__min_data_in_leaf': [ 10, 20, 50 ]
-    'model__num_leaves': [ 5, 10, 20 ]
-    'model__learning_rate': [ 0.05, 0.075, 0.1 ]
-    'model__n_estimators': [ 50, 100, 200 ]
+  "linear":
+    "dropmissing__threshold": [0.9, 1]
+    "droplowvariance__threshold": [ 0, 0.01 ]
+    "winsorizer__limits": [!!python/tuple [0., 1.], !!python/tuple [0.005, .995]]
+  "lasso":
+    "dropmissing__threshold": [ 0.9, 1 ]
+    "droplowvariance__threshold": [ 0, 0.01 ]
+    "winsorizer__limits": [!!python/tuple [0., 1.], !!python/tuple [0.005, .995]]
+    "model__alpha": [ .001, .01, .05, .03, .1 ]
+  "ridge":
+    "dropmissing__threshold": [ 0.9, 1 ]
+    "droplowvariance__threshold": [ 0, 0.01 ]
+    "winsorizer__limits": [!!python/tuple [0., 1.], !!python/tuple [0.005, .995]]
+    "model__alpha": [ .001, .01, .05, .03, .1 ]
+  "randomforest":
+    "dropmissing__threshold": [ 0.9, 1 ]
+    "droplowvariance__threshold": [ 0, 0.01 ]
+    "winsorizer__limits": [!!python/tuple [0., 1.], !!python/tuple [0.005, .995]]
+    "model__max_depth": [ 2, 4, 6, 8, 10 ]
+    "model__n_estimators": [ 50, 100, 200 ]
+  "gradientboosting":
+    "dropmissing__threshold": [ 0.99 ]
+    "droplowvariance__threshold": [ 0.01 ]
+    "winsorizer__limits": [!!python/tuple [0., 1.], !!python/tuple [0.005, .995]]
+    "model__min_data_in_leaf": [ 10, 20, 50 ]
+    "model__num_leaves": [ 5, 10, 20 ]
+    "model__learning_rate": [ 0.05, 0.075, 0.1 ]
+    "model__n_estimators": [ 50, 100, 200 ]
 ```
