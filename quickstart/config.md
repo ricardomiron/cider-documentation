@@ -1,7 +1,7 @@
+
 # Configuration file
 
-The configuration file - example at `configs/config.yml` - is used to store all relevant configurations, like paths to \
-the datasets and spark parameters. It should be appropriately edited before executing the code. <br>
+The configuration file - example at `configs/config.yml` - is used to store all relevant configurations, like paths to the datasets and spark parameters. It should be appropriately edited before executing the code. <br>
 
 The first parameters to set are those related to spark:
 
@@ -16,13 +16,7 @@ spark:
   loglevel: "ERROR"
 ```
 
-Next we specify folder and file locations. File paths are given relative to a "parent" directory: Either the `input_data` \
-directory or the `working` directory (they should not have leading slashes). The locations of the parent directories must \
-be specified with absolute paths (with leading slashes). Files \
-under the `input_data` directory will not be modified; the `working` directory is used for program outputs, which may or may \
-not act as inputs for later steps. For example, the featurizer writes features to the `working` directory, and then the ml module \
-reads features back in from that directory. At present, file names/sub-paths written programmatically under the `working` directory \
-are hard-coded and can't be specified in config.
+Next we specify folder and file locations. File subpaths are given relative to a "parent" directory: Either the `input_data` directory or the `working` directory (file subpaths should not have leading slashes). The locations of the parent directories must be specified with absolute paths (with leading slashes). Cider will not modify files under the `input_data` directory. It will use the `working` directory for program outputs, some of which may act as inputs for later steps. For example, the featurizer writes features to the `working` directory, and then the ml module reads features back in from that directory. At present, file names/sub-paths written programmatically under the `working` directory are hard-coded and can't be specified in config.
 
 ```
 path:
@@ -48,8 +42,7 @@ path:
     directory_path: "/Users/example/Documents/GD/cider/working_directory/"
 ```
 
-The featurizer module expects certain column and column names, and we can define them in the following section of the 
-config file:
+The featurizer module expects certain column and column names, and we can define them in the following section of the config file:
 
 ```
 col_names:
